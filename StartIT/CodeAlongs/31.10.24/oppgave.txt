@@ -1,0 +1,8 @@
+ Fjasbok 
+    Du skal lage et lite sosialt medie; Fjasbok! 
+    - Vi skal her kunne: 
+    - Opprette bruker 
+    - Ha venner 
+    - Se på andres profiler
+
+    Lage modell, view og controller funksjoner
