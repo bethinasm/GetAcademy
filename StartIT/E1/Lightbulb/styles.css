@@ -1,0 +1,45 @@
+body { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#textBox {
+    margin: 60px;
+    font-family: monospace;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.lyspære {
+    width: 250px;
+    height: 250px;
+    background-color: rgb(199, 198, 189);
+    border: 2px solid rgb(116, 115, 115);
+    border-radius: 50%;
+    margin-bottom: 70px;
+    transition: background-color 0.8s;
+}
+
+.knapp {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(163, 163, 163);
+    background-color: rgb(235, 235, 234);
+    padding: 4px;
+    box-shadow: 2px 2px 2px;
+}
+
+button {
+    width: 70px;
+    height: 100px;
+    user-select: none;
+    cursor: pointer;
+    border: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+button:hover {
+    background-color: rgb(194, 194, 194);
+}

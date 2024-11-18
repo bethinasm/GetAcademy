@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light bulb</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="textBox"> Light is OFF </div>
+    <div id="lightBulb" class="lyspære"></div>
+    <div class="knapp">
+        <button onclick="changeLight()"> ON </br></br></br> OFF </button>
+    </div>
+    
+
+    <script>
+        let isLightOn = false; //variabel for å sjekke om lyset er ON eller OFF. Det begynner OFF når siden lastes inn.
+      
+        function changeLight(){
+            let lightBulb = document.getElementById('lightBulb');
+            let textBox = document.getElementById('textBox');
+            
+
+            isLightOn = !isLightOn // veksler mellom om lyset er ON eller OFF (=! betyr at det er ulikt)
+
+            if (isLightOn) { 
+                lightBulb.style.backgroundColor = 'rgb(250, 232, 72)';
+                textBox.innerHTML = 'Light is ON'
+            } else {
+                lightBulb.style.backgroundColor = 'rgb(199, 198, 189)'
+                textBox.innerHTML = 'Light is OFF'
+            }
+
+        }
+
+        // function turnON(){
+            // document.getElementById("light").style.backgroundColor = "rgb(250, 232, 72)"
+            // document.getElementById("textBox").innerHTML = "Light is ON"
+        // }
+
+        // function turnOFF(){
+            // document.getElementById("light").style.backgroundColor = "rgb(199, 198, 189)"
+            // document.getElementById("textBox").innerHTML = "Light is OFF"
+        // }
+
+    </script>
+
+</body>
+</html>
