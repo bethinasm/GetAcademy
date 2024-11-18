@@ -1,0 +1,3 @@
+
+let userEmailInput = '';
+let textBox = '';
