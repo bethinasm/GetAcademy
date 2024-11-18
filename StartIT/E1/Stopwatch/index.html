@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoppeklokke</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <div class="background">
+        <div class="box">
+            <div  id="app" class="display"> 00:00:00 </div>
+                <div class="knapper">
+                    <button class="start" onclick="startTimer()"> Start</button>
+                    <button class="lap" onclick="recordLap()"> Lap </button> 
+                    <button class="stop" onclick="stoppTimer()"> Stop</button>
+                    <button class="reset" onclick="resetTimer()"> Reset</button>
+                </div>
+                <div id="lapTimeList"></div>
+        </div>
+    </div>
+ (ikke trykk på start mer enn en gang værsåsnill)
+
+
+
+    <script>
+
+        let timer;
+        let milliseconds = 0;
+        let seconds = 0;
+        let minutes = 0;
+      
+
+        function startTimer(){
+            timer = setInterval(updateTimer, 100)
+        }
+
+        function stoppTimer(){
+            clearInterval(timer);
+        }
+
+        function resetTimer(){
+            clearInterval (timer);
+            minutes = 0;
+            seconds = 0;
+            milliseconds = 0;
+            document.getElementById('app').innerText = tidOppbyggning();
+            document.getElementById('lapTimeList').innerHTML= ''; 
+        }
+
+        function updateTimer(){
+            milliseconds += 100; //øker tiden med 100 millisekunder
+            if (milliseconds >= 1000){ //sjekker om millisekunder er større enn 1000
+                milliseconds = 0;       // hvis det er mer enn 1000 millisekunder så restet til 0
+                seconds ++;             // og legger til 1 sekund
+                if (seconds >= 60){
+                    seconds = 0;
+                    minutes++;
+                }
+            }
+            document.getElementById('app').innerText = tidOppbyggning();
+        }
+
+        function tidOppbyggning(){ // for at tiden på display skal stå som minutter, sekunder og millisekunder
+            let millisekundTall = milliseconds / 100; //gjør om millisekundene til desimal tall
+            return (
+                String(minutes).padStart(2,'0') + ':' + //string().padStart gjør om variablen til en streng
+                String(seconds).padStart(2,'0') + ':' + // (2,'0') gjør at strengen har en minimum lengde på 2 tegn,
+                String(millisekundTall).padStart(2,'0') // sånn at det står 07 sek i steden for bare 7 sek
+            );                                          // +':'+ gjør at det blir mellomrom og at tidvisningen vises riktig
+                  
+        }            
+
+        function recordLap(){
+            let lapTime = tidOppbyggning();
+            let lapNumber = document.getElementById('lapTimeList').childElementCount + 1; //Henter antall eksisterende laps og adder 1
+           
+            let newLapDiv = document.createElement('div');
+            newLapDiv.textContent = `LAP ${lapNumber}: ${lapTime}`;
+            document.getElementById('lapTimeList').appendChild(newLapDiv);
+
+            console.log()
+        }
+
+        
+    </script>
+</body>
+</html>
