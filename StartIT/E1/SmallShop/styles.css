@@ -1,0 +1,56 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(85, 117, 82);
+    color: antiquewhite;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    width: 500px;
+    padding: 20px;
+}
+
+h2 {
+    text-decoration:underline;
+}
+
+.coinPouch {
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.productsAndPrices {
+    display: flex;
+    width: 850px;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;;
+    margin-bottom: -4px;
+    background-color: bisque;
+    border-radius: 1cqh;
+    border: 2px solid wheat;
+    color: rgb(138, 106, 86);
+   
+}
+
+button:hover{
+    background-color: rgb(230, 228, 162);
+}
+
+.shoppingBag {
+    text-align: center;
+    align-items: center;
+    width: 850px;
+}
+
+.payButton{
+    padding: 10px;
+}
