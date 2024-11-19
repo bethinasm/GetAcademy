@@ -45,6 +45,7 @@ Console.WriteLine($"Second random number is: {RandomNr2}");
 
 int result = CheckNumbers(RandomNr1, RandomNr2);
 Console.WriteLine($"The result is: {result}.");
+
 int CheckNumbers(int RandomNr1, int RandomNr2)
 {
     if (RandomNr1 == RandomNr2)
@@ -59,7 +60,6 @@ int CheckNumbers(int RandomNr1, int RandomNr2)
     }
 }
 
-Console.ReadKey();
 
 /*  Oppgave 3:
     Lag en metode som tar inn to int verdier. Dersom en av de, eller summen til int verdiene blir 30,
@@ -67,3 +67,27 @@ Console.ReadKey();
 */
 
 Console.WriteLine("OPPGAVE 3");
+Console.ReadKey();
+
+Random random = new Random();
+int RandomNr3 = random.Next(1, 51);
+int RandomNr4 = random.Next(1, 51);
+Console.WriteLine($"First random number is: {RandomNr3}");
+Console.WriteLine($"Second random number is: {RandomNr4}");
+
+bool CheckIf30(int num3, int num4)
+{
+    if (num3 == 30 || num4 == 30 || (num3 + num4) == 30)
+    {
+        Console.WriteLine("Condition met: Returning true");
+        return true;
+    }
+    else
+    {
+        Console.WriteLine("Condition not met: Returning false");
+        return false;
+    }
+}
+
+bool isTrue = CheckIf30(RandomNr3, RandomNr4);
+Console.WriteLine($"Does either number or their sum equal 30? {isTrue}");
